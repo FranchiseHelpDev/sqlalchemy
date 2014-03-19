@@ -12,6 +12,25 @@
     :version: 0.8.6
 
     .. change::
+        :tags: bug, ext
+        :versions: 0.9.4
+        :tickets: 2997
+
+        Fixed bug in mutable extension as well as
+        :func:`.attributes.flag_modified` where the change event would not be
+        propagated if the attribute had been reassigned to itself.
+
+    .. change::
+        :tags: bug, orm
+        :versions: 0.9.4
+
+        Improved an error message which would occur if a query() were made
+        against a non-selectable, such as a :func:`.literal_column`, and then
+        an attempt was made to use :meth:`.Query.join` such that the "left"
+        side would be determined as ``None`` and then fail.  This condition
+        is now detected explicitly.
+
+    .. change::
         :tags: bug, sql
         :versions: 0.9.4
         :tickets: 2977

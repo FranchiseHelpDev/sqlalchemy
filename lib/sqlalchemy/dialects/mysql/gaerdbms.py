@@ -32,6 +32,8 @@ from .mysqldb import MySQLDialect_mysqldb
 from ...pool import NullPool
 import re
 
+print "pizza"
+
 
 def _is_dev_environment():
     return os.environ.get('SERVER_SOFTWARE', '').startswith('Development/')

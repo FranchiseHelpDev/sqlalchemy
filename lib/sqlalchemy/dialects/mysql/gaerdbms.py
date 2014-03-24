@@ -107,6 +107,7 @@ def _is_dev_environment():
 class MySQLDialect_gaerdbms(MySQLDialect_mysqldb):
 
     supports_sane_rowcount = False
+    supports_sane_multi_rowcount = False
 
     @classmethod
     def dbapi(cls):

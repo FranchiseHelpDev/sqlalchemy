@@ -144,6 +144,9 @@ class MySQLDialect_gaerdbms(MySQLDialect_mysqldb):
             opts['conv'] = CONVERTERS
         return [], opts
 
+    def _detect_charset(self, connection):
+        return 'utf8'
+
     def _extract_error_code(self, exception):
         match = re.compile(r"^(\d+)L?:|^\((\d+)L?,").match(str(exception))
         # The rdbms api will wrap then re-raise some types of errors
